@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchPosts, deletePost } from './postsSlice';
+import { fetchPosts, deletePost, updatePost } from './postsSlice';
 
 function PostsList() {
   const dispatch = useDispatch();
@@ -17,8 +17,10 @@ function PostsList() {
     <ul>
       {items.map(post => (
         <li key={post.id}>
-          {post.title}
+          <h3>{post.title}</h3>
+          <p>{post.body}</p>
           <button onClick={() => dispatch(deletePost(post.id))}>삭제</button>
+          <button onClick={() => dispatch(updatePost(post))}>수정</button>
         </li>
       ))}
     </ul>

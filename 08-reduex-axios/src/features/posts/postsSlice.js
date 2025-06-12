@@ -13,8 +13,9 @@ export const createPost = createAsyncThunk('posts/createPost', async (data) => {
   return res.data;
 });
 
-export const updatePost = createAsyncThunk('posts/updatePost', async ({ id, data }) => {
-  const res = await axios.put(`${API_URL}/${id}`, data);
+export const updatePost = createAsyncThunk('posts/updatePost', async (data) => {
+  data = {...data, title : '수정된 타이틀', body : '수정된 본문'};
+  const res = await axios.put(`${API_URL}/${data.id}`, data);
   return res.data;
 });
 
@@ -46,7 +47,9 @@ const postsSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(createPost.fulfilled, (state, action) => {
-        state.items.push(action.payload);
+        state.items.unshift(action.payload);
+        // 최근 등록물을 unshift는 상단으로 정렬
+
       })
       .addCase(updatePost.fulfilled, (state, action) => {
         const index = state.items.findIndex(p => p.id === action.payload.id);
