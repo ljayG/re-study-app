@@ -5,7 +5,7 @@ import { Link, Outlet, Navigate } from 'react-router-dom';
 export default function DashboardLayout() {
 
     // 인증정보를 체크하는 로직(토큰.. 정보 재 확인)
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     return isLoggedIn ? (
         <div>
