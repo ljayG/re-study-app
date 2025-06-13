@@ -7,8 +7,8 @@ function App() {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>👤 사용자 목록</h1>
-      <UserCard name="홍길동" email="hong@example.com" />
-      <UserCard name="김철수" email="kim@example.com" />
+      <UserCard name="홍길동" email="hong@example.com" age={18} />
+      <UserCard name="김철수" email="kim@example.com" age={25} />
       <h2>TypeScript 실습</h2>
       <Counter />
       <InputForm />
