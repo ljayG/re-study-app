@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import UserCard from './components/UserCard';
+import Counter from './components/Counter';
+import InputForm from './components/InputForm';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: '2rem' }}>
+      <h1>👤 사용자 목록</h1>
+      <UserCard name="홍길동" email="hong@example.com" />
+      <UserCard name="김철수" email="kim@example.com" />
+      <h2>TypeScript 실습</h2>
+      <Counter />
+      <InputForm />
     </div>
   );
 }
