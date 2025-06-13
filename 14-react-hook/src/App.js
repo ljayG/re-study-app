@@ -4,6 +4,8 @@ import UserList from './components/UserList';
 import Timer from './components/Timer';
 import FocusInput from './components/FocusInput';
 import ResponsiveText from './components/ResponsiveText';
+import ResponsiveComponent from './components/ResponsiveComponent';
+import Settings from './components/Settings';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <Timer />
       <FocusInput />
       <ResponsiveText />
+      <ResponsiveComponent />
+      <Settings />
     </div>
   );
 }

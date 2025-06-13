@@ -15,7 +15,7 @@ export default function UserList() {
             <h2>유저 목록</h2>
             <ul>
                 {users.map(user => (
-                    <li key={user.is}>
+                    <li key={user.id}>
                         {user.name} ({user.email}) / {user.address.city}
                     </li>
                 ))}
