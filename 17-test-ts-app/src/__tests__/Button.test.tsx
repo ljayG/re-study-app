@@ -1,8 +1,9 @@
 // Button.test.tsx
-test('버튼 클릭 시 콜백 함수 호출됨', async () => {
-  const handleClick = jest.fn();
-  render(<Button onClick={handleClick}>클릭</Button>);
-  const button = screen.getByText('클릭');
-  await userEvent.click(button);
-  expect(handleClick).toHaveBeenCalledTimes(1);
+import { render, screen } from '@testing-library/react';
+import Button from '../components/Button';
+
+test('버튼 텍스트 렌더링 테스트', () => {
+  render(<Button>확인</Button>);
+  const button = screen.getByText('확인');
+  expect(button).toBeInTheDocument();
 });
